@@ -7,7 +7,7 @@ learning_rate=1e-5   # Optimal parameters
 kl_coeff=0.1
 num_train_epochs=10
 
-CUDA_VISIBLE_DEVICES=7 HF_ENDPOINT=https://hf-mirror.com \
+CUDA_VISIBLE_DEVICES=0 HF_ENDPOINT=https://hf-mirror.com \
 python ../src/grid_search.py  \
     --model_name_or_path ${model_name_or_path} \
     --data_path ${data_path} \
