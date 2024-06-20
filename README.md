@@ -23,7 +23,7 @@ pip install -e .
 
 
 ## Acknowledgement
-Our code have been developed based on [Consistency Models]([https://github.com/openai/consistency_models](https://github.com/tatsu-lab/stanford_alpaca)). We thank this valuable work.
+Our code have been developed based on [Alpaca]([https://github.com/openai/consistency_models](https://github.com/tatsu-lab/stanford_alpaca)). We thank this valuable work.
 
 
 ## Contact Us
