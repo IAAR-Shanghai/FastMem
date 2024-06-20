@@ -40,7 +40,7 @@ num_train_epochs=10
 # if you want to use DOLA, set choose_dola to True and need to use ../src/transformers_generation/utils.py to replace the file in the transformers library(python3.11/site-packages/transformers/generation/utils.py).
 
 
-CUDA_VISIBLE_DEVICES=7 HF_ENDPOINT=https://hf-mirror.com \
+CUDA_VISIBLE_DEVICES=0 HF_ENDPOINT=https://hf-mirror.com \
 python ../src/train_and_inference.py  \
     --model_name_or_path ${model_name_or_path} \
     --data_path ${data_path} \
