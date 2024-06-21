@@ -48,12 +48,15 @@ Below is an example input to our method (from NQ-Swap and CNN-DM).
      "sub_context": "`` Love Will Keep Us Alive '' is a song written by Jim Capaldi , Paul Carrack , and Peter Vale , and produced by the Eagles , Elliot Scheiner , and Rob Jacobs . It was first performed by the Eagles in 1994 , during their `` Hell Freezes Over '' reunion tour , with lead vocals by bassist Yuliya Snigir .",
      "sub_answer": "Yuliya Snigir"
 },
+```
+```json
 {
-     "article": "Fabio Borini may not have had much success climbing up the pecking order in the Liverpool attack but the Italian striker had no problems scaling the heights at Delamere Forest Park on Tuesday. The former Swansea striker made the most of the warm weather as he spent the day at adventure park Go Ape at the Cheshire forest. Borini appeared as a second-half substitute in Liverpool's 2-0 win against Newcastle at Anfield on Monday as clearly still had plenty of energy left as he was pictured taking part in a climbing exercise. Fabio Borini enjoys a day out at Go Ape in Delamere Forest Park on Tuesday . The Liverpool strike poses with friends at the adventure park in Cheshire as he enjoyed a day off . Fabio Borini came on as a second-half substitute during Liverpool's 2-0 win against Newcastle on Monday . The former Sunderland loanee took to social media to share pictures of his day out with his pals writing on Instagram: 'Sunny day off in Delamere forest! \"Go Ape\"!! It's good having friends around!' Borini has only netted once in 17 appearances for the Reds this season as he has struggled to establish himself in the team following his loan spell in the North-East last season. Liverpool's win on Monday moved Brendan Rodgers' side up to fifth, just four points behind Manchester City in the race for the top four.",
+     "article": "Fabio Borini may not have had much success climbing up the pecking order in the Liverpool attack but the Italian striker had no problems scaling the heights at Delamere Forest Park on Tuesday. The former Swansea striker made the most of the warm weather as he spent the day at adventure park Go Ape at the Cheshire forest. Borini appeared as a second-half substitute in Liverpool's 2-0 win against Newcastle at Anfield on Monday as clearly still had plenty of energy left as he was pictured taking part in a climbing exercise...",
      "summary": "Fabio Borini visited Go Ape adventure park in Delamere Forest on Tuesay . The Liverpool striker shared Instagram pictures from his day out . Borini came on as a substitute for Liverpool against Newcastle on Monday ."
 }
-...
 ```
+### Running FastMem on Q&A and summarization tasks
+
 
 
 ## Results for Experiment
@@ -62,6 +65,8 @@ Below is an example input to our method (from NQ-Swap and CNN-DM).
 <p align="center"><img src="./assets/experiment/different_model.png" width="50%"></p>
 <p align="center"><img src="./assets/experiment/small_model.png" width="50%"></p>
 <p align="center"><img src="./assets/experiment/summarization.png" alt=""></p>
+
+More detail and analysis about experimental results can be found in [`paper`]("").
 
 ## Acknowledgement
 Our code have been developed based on [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca). We thank this valuable work.
