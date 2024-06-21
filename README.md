@@ -16,6 +16,10 @@ TL;DR: **FastMem** maximizes the likelihood of the prompt before inference by fi
 
 ## Dependencies
 
+Ensure you have Python 3.11.0+. 
+
+The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt).
+
 To install all packages in this codebase along with their dependencies, run
 ```sh
 pip install -e .
