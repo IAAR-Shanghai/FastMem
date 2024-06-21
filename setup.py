@@ -10,6 +10,7 @@ setup(
       'torch==2.2.2',
       'torchaudio==2.2.2',
       'torchvision==0.17.2',
+      'numpy==1.26.4',
       'memory_profiler',
       'transformers==4.40',
       'termcolor',
