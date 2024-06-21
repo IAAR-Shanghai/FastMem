@@ -69,8 +69,8 @@ For example, the default parameters for the Llama3-8B-Instruct model are the opt
 When you need to test different models and tasks, you need to modify parameters such as `model_name`, `model_name_or_path`, `task_type`, `dataset_name` and `data_path` accordingly to conduct the tests. 
 
 > [!Important]
-> 1. If you want to use Contrastive Decoding(CD), set choose_cd to True.
-> 2. If you want to use DOLA, set choose_dola to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`).
+> 1. If you want to use Contrastive Decoding(CD), set `choose_cd` to True.
+> 2. If you want to use DOLA, set `choose_dola` to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`).
 > 3. If you need to test our method on a new dataset, you need to first obtain the corresponding optimal hyperparameters in the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
 
 ## Results for Experiment
