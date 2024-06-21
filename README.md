@@ -29,6 +29,10 @@ pip install -e .
 
 ## Results for Experiment
 
+<p align="center"><img src="./assets/experiment/qa.png" width="50%"></p>
+<p align="center"><img src="./assets/experiment/different_model.png" width="50%"></p>
+<p align="center"><img src="./assets/experiment/small_model.png" width="50%"></p>
+<p align="center"><img src="./assets/experiment/summarization.png" alt=""></p>
 
 ## Acknowledgement
 Our code have been developed based on [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca). We thank this valuable work.
