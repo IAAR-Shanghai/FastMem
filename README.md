@@ -1,5 +1,5 @@
 <h1 align="center">
-   <img src="./assets/memorization.png" alt="" width="2%"> FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models
+   <img src="./assets/memorization.png" alt="" width="4%"> FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models
 </h1>
 This is the official cod of the paper **FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models**
  by *Junyi Zhu, *Shuochen Liu, Yuyu, Tangbo, Yibo Yan, Zhiyu Li, Feiyu Xiong, Tong Xu, Matthew B. Blaschko
