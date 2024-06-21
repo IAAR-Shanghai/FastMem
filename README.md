@@ -36,10 +36,11 @@ pip install -e .
 
 ## Run
 
-We evaluate **FastMem** on Q&A and summarization tasks that require LLMs to respond based on the given context.
+We evaluate **FastMem** on Q&A and summarization tasks that require LLMs to respond based on the given context. Our experiments include evaluations of popular open-source instruction fine-tuned LLMs from the Llama 3 series (8B and 70B) and the Qwen 1.5 series (4B, 7B, and 14B).
+
 
 ### Input format
-Below is an example input to our method (from NQ-Swap and CNN-DM). 
+The complete test dataset has been uploaded to the repository at the path [`./eval/data/`](./eval/data/). Below is an example input to our method (from NQ-Swap for Q&A and CNN-DM for summarization). 
 ```json
 {
      "input": "who sings love will keep us alive by the eagles",
@@ -57,7 +58,7 @@ Below is an example input to our method (from NQ-Swap and CNN-DM).
 ```
 ### Running FastMem on Q&A and summarization tasks
 
-
+Both scripts are saved in `./scripts`. 
 
 ## Results for Experiment
 
