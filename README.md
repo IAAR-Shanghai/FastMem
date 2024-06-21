@@ -27,7 +27,7 @@ TL;DR: **FastMem** maximizes the likelihood of the prompt before inference by fi
 
 Ensure you have Python 3.11.0+. 
 
-The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt). The main packages are `pytorch`, `transformers`, and `accelerate`.
+The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt). The main packages are `pytorch`, `transformers` and `accelerate`.
 
 To install all packages in this codebase along with their dependencies, run
 ```sh
