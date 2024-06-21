@@ -12,6 +12,7 @@ Will be uploaded to arXiv soon.
 
 TL;DR: **FastMem** maximizes the likelihood of the prompt before inference by fine-tuning only the last Feed-Forward Network (FFN) module. This targeted approach ensures efficient optimization without overfitting, significantly improving the model's ability to comprehend and accurately follow the context.
 
+<p align="center"><img src="./assets/framework.png" alt="" width="80%"></p>
 
 ## Dependencies
 
