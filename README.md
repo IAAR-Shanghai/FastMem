@@ -1,7 +1,16 @@
 <h1 align="center">
    <img src="./assets/memorization.png" alt="" width="4%"> FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models
 </h1>
-This is the official code of the paper [`FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models`](https://github.com/IAAR-Shanghai/FastMem/edit/master/README.md)
+<p align="center">
+    <a href="https://opensource.org/license/apache-2-0/">
+        <img alt="License: Apache" src="https://img.shields.io/badge/License-Apache2.0-yellow.svg">
+    </a>
+    <a href="">
+        <img alt="arXiv Paper" src="https://img.shields.io/badge/Paper-arXiv-red.svg">
+    </a>
+</p>
+
+This is the official code of the paper **FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models**
  by *Junyi Zhu, *Shuochen Liu, Yuyu, Tangbo, Yibo Yan, Zhiyu Li, Feiyu Xiong, Tong Xu, Matthew B. Blaschko
  
  If you find this repository or paper useful, you can cite
@@ -18,7 +27,7 @@ TL;DR: **FastMem** maximizes the likelihood of the prompt before inference by fi
 
 Ensure you have Python 3.11.0+. 
 
-The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt).
+The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt). The main packages are `pytorch`, `transformers`, and `accelerate`.
 
 To install all packages in this codebase along with their dependencies, run
 ```sh
@@ -26,6 +35,26 @@ pip install -e .
 ```
 
 ## Run
+
+We evaluate **FastMem** on Q&A and summarization tasks that require LLMs to respond based on the given context.
+
+### Input format
+Below is an example input to our method (from NQ-Swap and CNN-DM). 
+```json
+{
+     "input": "who sings love will keep us alive by the eagles",
+     "context": "`` Love Will Keep Us Alive '' is a song written by Jim Capaldi , Paul Carrack , and Peter Vale , and produced by the Eagles , Elliot Scheiner , and Rob Jacobs . It was first performed by the Eagles in 1994 , during their `` Hell Freezes Over '' reunion tour , with lead vocals by bassist Timothy B. Schmit .",
+     "answer": "Timothy B. Schmit",
+     "sub_context": "`` Love Will Keep Us Alive '' is a song written by Jim Capaldi , Paul Carrack , and Peter Vale , and produced by the Eagles , Elliot Scheiner , and Rob Jacobs . It was first performed by the Eagles in 1994 , during their `` Hell Freezes Over '' reunion tour , with lead vocals by bassist Yuliya Snigir .",
+     "sub_answer": "Yuliya Snigir"
+},
+{
+     "article": "Fabio Borini may not have had much success climbing up the pecking order in the Liverpool attack but the Italian striker had no problems scaling the heights at Delamere Forest Park on Tuesday. The former Swansea striker made the most of the warm weather as he spent the day at adventure park Go Ape at the Cheshire forest. Borini appeared as a second-half substitute in Liverpool's 2-0 win against Newcastle at Anfield on Monday as clearly still had plenty of energy left as he was pictured taking part in a climbing exercise. Fabio Borini enjoys a day out at Go Ape in Delamere Forest Park on Tuesday . The Liverpool strike poses with friends at the adventure park in Cheshire as he enjoyed a day off . Fabio Borini came on as a second-half substitute during Liverpool's 2-0 win against Newcastle on Monday . The former Sunderland loanee took to social media to share pictures of his day out with his pals writing on Instagram: 'Sunny day off in Delamere forest! \"Go Ape\"!! It's good having friends around!' Borini has only netted once in 17 appearances for the Reds this season as he has struggled to establish himself in the team following his loan spell in the North-East last season. Liverpool's win on Monday moved Brendan Rodgers' side up to fifth, just four points behind Manchester City in the race for the top four.",
+     "summary": "Fabio Borini visited Go Ape adventure park in Delamere Forest on Tuesay . The Liverpool striker shared Instagram pictures from his day out . Borini came on as a substitute for Liverpool against Newcastle on Monday ."
+}
+...
+```
+
 
 ## Results for Experiment
 
