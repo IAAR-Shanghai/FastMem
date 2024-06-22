@@ -36,7 +36,7 @@ pip install -e .
 
 ## Run
 
-We evaluate **FastMem** on Q&A and summarization tasks that require LLMs to respond based on the given context. Our experiments include evaluations of popular open-source instruction fine-tuned LLMs from the Llama 3 series (8B and 70B) and the Qwen 1.5 series (4B, 7B, and 14B).
+We evaluate **FastMem** on Q&A and summarization tasks that require LLMs to respond based on the given context. Our experiments include evaluations of popular open-source instruction fine-tuned LLMs from the Llama 3 series (8B-Instruct and 70B-Instruct) and the Qwen 1.5 series (4B-Chat, 7B-Chat, and 14B-Chat).
 
 
 ### Input format
