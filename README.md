@@ -19,7 +19,7 @@ Will be uploaded to arXiv soon.
 ```
 ## Overview
 
-TL;DR: **FastMem** maximizes the likelihood of the prompt before inference by fine-tuning only the last Feed-Forward Network (FFN) module. This targeted approach ensures efficient optimization without overfitting, significantly improving the model's ability to comprehend and accurately follow the context.
+TL;DR: **FastMem** maximizes the likelihood of the prompt before inference by fine-tuning only the last Feed-Forward Network (FFN) module. This targeted approach ensures efficient memorization without overfitting, significantly improving the model's ability to comprehend and accurately follow the context.
 
 <p align="center"><img src="./assets/framework.png" alt="" width="80%"></p>
 
@@ -61,16 +61,16 @@ The complete test dataset has been uploaded to the repository at the path [`./ev
 ```
 ### Running FastMem on Q&A and summarization tasks
 
-All scripts are saved in [`./scripts`](./scripts). Run `bash run_qa.sh` or `bash run_summary.sh` to reproduce our results. When you need to test different models and tasks, you need to modify parameters such as `model_name`, `model_name_or_path`, `task_type`, `dataset_name` and `data_path` accordingly to conduct the tests. 
+All running scripts are saved in [`./scripts`](./scripts). Run `bash run_qa.sh` or `bash run_summary.sh` to reproduce our results. To evaluate different models and tasks, please modify hyperparameters `model_name`, `model_name_or_path`, `task_type`, `dataset_name` and `data_path` accordingly. 
 
-For Q&A tasks, you can see the real-time accuracy calculated in the command line. But for summarization, you need to modify the path of results in `evaluate_summary.py` and run the code to calculate the metrics.
+For Q&A tasks, the real-time accuracy is calculated and presented in the terminal. For summarization, we provide `evaluate_summary.py` to analyze the results. To do this, your need to modify the result path in `evaluate_summary.py` and run the code to calculate the metrics.
 
-**Note:** Given the various characteristics of different models and datasets, testing under respective hyperparameters is needed to achieve optimal results.In the bash file we adopt the optimal hyperparameters for Llama 3-8B-Instruct.
+**Note:** Given the various characteristics of different models and datasets, testing under respective hyperparameters may be needed to achieve optimal results. In the bash file we adopt the optimal hyperparameters for Llama 3-8B-Instruct.
 
 > [!Important]
-> 1. If you want to incorporate Contrastive Decoding(CD), set `choose_cd` to True.
-> 2. If you want to incorporate DoLa, set `choose_dola` to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`). Currently, only Llama 3-8B-Instruct is supported.
-> 3. If you need to test our method on a new dataset or other models, you need to first obtain the corresponding optimal hyperparameters using the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
+> 1. To evaluate FastMem + Contrastive Decoding(CD), set `choose_cd` to True.
+> 2. To evalaute FastMem + DoLa, set `choose_dola` to True. Additionally, you need to replace the file in the transformers library (`[path/to/env]/python3.11/site-packages/transformers/generation/utils.py`) with `../src/transformers_generation/utils.py`. Currently, this decoding strategy only supports Llama 3-8B-Instruct.
+> 3. To test our method on a new dataset or other models, you can obtain the corresponding optimal hyperparameters using the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model (e.g. `model_name`) and dataset (e.g. `dataset_name`) in the bash file are the same as mentioned above.
 
 ## Results for Experiment
 
