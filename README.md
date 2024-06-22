@@ -61,17 +61,16 @@ The complete test dataset has been uploaded to the repository at the path [`./ev
 ```
 ### Running FastMem on Q&A and summarization tasks
 
-All scripts are saved in [`./scripts`](./scripts). Run `bash run_qa.sh` or `bash run_summary.sh` to reproduce our results.
+All scripts are saved in [`./scripts`](./scripts). Run `bash run_qa.sh` or `bash run_summary.sh` to reproduce our results. When you need to test different models and tasks, you need to modify parameters such as `model_name`, `model_name_or_path`, `task_type`, `dataset_name` and `data_path` accordingly to conduct the tests. 
 
 Given the characteristics of different models and datasets, testing under the best hyperparameters is needed to achieve optimal results. 
-For example, the default parameters for the Llama3-8B-Instruct model are the optimal parameters for the Q&A task. 
+For example, the default parameters for the Llama3-8B-Instruct model are the optimal parameters for the Q&A task. As for summarization, you need to modify the path of results in `evaluate_summary.py` and run the code to calculate the metrics.
 
-When you need to test different models and tasks, you need to modify parameters such as `model_name`, `model_name_or_path`, `task_type`, `dataset_name` and `data_path` accordingly to conduct the tests. 
 
 > [!Important]
 > 1. If you want to use Contrastive Decoding(CD), set `choose_cd` to True.
 > 2. If you want to use DOLA, set `choose_dola` to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`).
-> 3. If you need to test our method on a new dataset, you need to first obtain the corresponding optimal hyperparameters in the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
+> 3. If you need to test our method on a new dataset or other scale models, you need to first obtain the corresponding optimal hyperparameters in the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
 
 ## Results for Experiment
 
