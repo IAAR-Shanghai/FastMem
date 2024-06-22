@@ -12,7 +12,7 @@
 
 This is the official code of the paper **FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models**
  by *Junyi Zhu, *Shuochen Liu, Yuyu, Tangbo, Yibo Yan, Zhiyu Li, Feiyu Xiong, Tong Xu, Matthew B. Blaschko
- 
+
 If you find this repository or paper useful, you can cite
 ```
 Will be uploaded to arXiv soon.
@@ -29,7 +29,7 @@ Ensure you have Python 3.11.0+.
 
 The required dependencies and their versions can be found in the [`requirements.txt`](requirements.txt). The main packages are `pytorch`, `transformers` and `accelerate`.
 
-To install all packages in this codebase along with their dependencies, run
+To install all the required packages along with their dependencies, run
 ```sh
 pip install -r requirements.txt
 ```
