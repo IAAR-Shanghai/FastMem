@@ -1,16 +1,12 @@
 model_name="llama3"  # model name, e.g. llama3, qwen
-model_name_or_path=/mnt/data102_d2/huggingface/models/Meta-Llama-3-8B-Instruct   # TODO: path to the model
+model_name_or_path=/mnt/data102_d2/huggingface/models/Meta-Llama-3-8B-Instruct
 task_type="qa"  # task type, e.g. qa, summary
 dataset_name="nq"   # testing dataset name. e.g., nq, nqswap, memotrap, hotpot... Note: NQ and NQSWAP are the same dataset, you only need to modify the dataset_name to "nqswap".
 data_path=../eval/data/QA/nqswap.json
 learning_rate=1e-5   # Optimal parameters
 kl_coeff=0.1
 num_train_epochs=10
-# Note:
-# if you want to use Contrastive Decoding(CD), set choose_cd to True.
-# if you want to use DOLA, set choose_dola to True and need to use ../src/transformers_generation/utils.py to replace the file in the transformers library(python3.11/site-packages/transformers/generation/utils.py).
 
-CUDA_VISIBLE_DEVICES=0 HF_ENDPOINT=https://hf-mirror.com \
 python ../src/train_and_inference.py  \
     --model_name_or_path ${model_name_or_path} \
     --data_path ${data_path} \

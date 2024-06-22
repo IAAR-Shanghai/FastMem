@@ -1,5 +1,5 @@
 model_name="llama3"
-model_name_or_path=/mnt/data102_d2/huggingface/models/Meta-Llama-3-8B-Instruct   # TODO: path to the model
+model_name_or_path=/mnt/data102_d2/huggingface/models/Meta-Llama-3-8B-Instruct
 task_type="summary"  # task type, e.g. summary
 dataset_name="xsum"   # testing dataset name. e.g., xsum...
 data_path=../eval/data/Summary/xsum_sample_test_3000.jsonl
@@ -35,12 +35,8 @@ num_train_epochs=10
             kl_coeff:0.03
         
 """
-# Note:
-# if you want to use Contrastive Decoding(CD), set choose_cd to True.
-# if you want to use DOLA, set choose_dola to True and need to use ../src/transformers_generation/utils.py to replace the file in the transformers library(python3.11/site-packages/transformers/generation/utils.py).
 
 
-CUDA_VISIBLE_DEVICES=0 HF_ENDPOINT=https://hf-mirror.com \
 python ../src/train_and_inference.py  \
     --model_name_or_path ${model_name_or_path} \
     --data_path ${data_path} \
