@@ -63,11 +63,9 @@ The complete test dataset has been uploaded to the repository at the path [`./ev
 
 All scripts are saved in [`./scripts`](./scripts). Run `bash run_qa.sh` or `bash run_summary.sh` to reproduce our results. When you need to test different models and tasks, you need to modify parameters such as `model_name`, `model_name_or_path`, `task_type`, `dataset_name` and `data_path` accordingly to conduct the tests. 
 
-Given the characteristics of different models and datasets, testing under the best hyperparameters is needed to achieve optimal results. 
-For example, the default parameters for the Llama3-8B-Instruct model are the optimal parameters for the Q&A task. 
+For Q&A tasks, you can see the real-time accuracy calculated in the command line. But for summarization, you need to modify the path of results in `evaluate_summary.py` and run the code to calculate the metrics.
 
-For Q&A tasks, we can see the real-time accuracy calculated in the command line. As for summarization, you need to modify the path of results in `evaluate_summary.py` and run the code to calculate the metrics.
-
+**Note:** Given the characteristics of different models and datasets, testing under the best hyperparameters is needed to achieve optimal results. Most of the optimal parameters for existing datasets are already commented in the bash file.
 
 > [!Important]
 > 1. If you want to use Contrastive Decoding(CD), set `choose_cd` to True.
