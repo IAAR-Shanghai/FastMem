@@ -8,3 +8,5 @@ memory_profiler
 transformers==4.40
 termcolor
 accelerate
+datasets
+evaluate
