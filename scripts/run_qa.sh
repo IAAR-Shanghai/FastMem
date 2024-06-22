@@ -1,5 +1,5 @@
 model_name="llama3"  # model name, e.g. llama3, qwen
-model_name_or_path=/mnt/data102_d2/huggingface/models/Meta-Llama-3-8B-Instruct
+model_name_or_path=/path/to/model                #path to the huggingface model
 task_type="qa"  # task type, e.g. qa, summary
 dataset_name="nq"   # testing dataset name. e.g., nq, nqswap, memotrap, hotpot... Note: NQ and NQSWAP are the same dataset, you only need to modify the dataset_name to "nqswap".
 data_path=../eval/data/QA/nqswap.json

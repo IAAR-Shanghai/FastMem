@@ -1,5 +1,5 @@
 model_name="llama3"
-model_name_or_path=/mnt/data102_d2/huggingface/models/Meta-Llama-3-8B-Instruct
+model_name_or_path=/path/to/model    #path to the huggingface model
 task_type="summary"  # task type, e.g. summary
 dataset_name="xsum"   # testing dataset name. e.g., xsum...
 data_path=../eval/data/Summary/xsum_sample_test_3000.jsonl
