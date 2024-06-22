@@ -629,6 +629,7 @@ if __name__ == "__main__":
         # Post-process the generated text
         model.model.last_input_dic = {}
         logger.info(f"output_text: {colored(output_text, 'green')}")
+        os.makedirs(data_args.output_path, exist_ok=True)
         if training_args.task_type == 'qa':
             if 'memotrap' == training_args.dataset_name or 'hotpot' in training_args.dataset_name:
                 answers = [metric_reference["answers"]]
