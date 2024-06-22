@@ -31,7 +31,7 @@ The required dependencies and their versions can be found in the [`requirements.
 
 To install all packages in this codebase along with their dependencies, run
 ```sh
-pip install -e .
+pip install -r requirements.txt
 ```
 
 ## Run
@@ -70,7 +70,7 @@ For Q&A tasks, you can see the real-time accuracy calculated in the command line
 > [!Important]
 > 1. If you want to use Contrastive Decoding(CD), set `choose_cd` to True.
 > 2. If you want to use DOLA, set `choose_dola` to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`).
-> 3. If you need to test our method on a new dataset or other scale models, you need to first obtain the corresponding optimal hyperparameters in the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
+> 3. If you need to test our method on a new dataset or other models, you need to first obtain the corresponding optimal hyperparameters in the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
 
 ## Results for Experiment
 
@@ -79,10 +79,10 @@ For Q&A tasks, you can see the real-time accuracy calculated in the command line
 <p align="center"><img src="./assets/experiment/small_model.png" width="50%"></p>
 <p align="center"><img src="./assets/experiment/summarization.png" alt=""></p>
 
-More details and analyses about experimental results can be found in [`paper`]("").
+More details and analyses about experimental results can be found in our paper.
 
 ## Acknowledgement
-Our code have been developed based on [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca). We thank this valuable work.
+Our code have been developed based on [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca), [DoLa](https://github.com/voidism/DoLa). We thank these valuable works.
 
 
 ## Contact Us
