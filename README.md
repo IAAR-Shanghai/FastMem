@@ -65,12 +65,12 @@ All scripts are saved in [`./scripts`](./scripts). Run `bash run_qa.sh` or `bash
 
 For Q&A tasks, you can see the real-time accuracy calculated in the command line. But for summarization, you need to modify the path of results in `evaluate_summary.py` and run the code to calculate the metrics.
 
-**Note:** Given the characteristics of different models and datasets, testing under the best hyperparameters is needed to achieve optimal results. Most of the optimal parameters for existing datasets are already commented in the bash file.
+**Note:** Given the various characteristics of different models and datasets, testing under respective hyperparameters is needed to achieve optimal results.In the bash file we adopt the optimal hyperparameters for Llama 3-8B-Instruct.
 
 > [!Important]
 > 1. If you want to use Contrastive Decoding(CD), set `choose_cd` to True.
-> 2. If you want to use DOLA, set `choose_dola` to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`).
-> 3. If you need to test our method on a new dataset or other models, you need to first obtain the corresponding optimal hyperparameters in the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
+> 2. If you want to use DoLa, set `choose_dola` to True and need to use `../src/transformers_generation/utils.py` to replace the file in the transformers library(`python3.11/site-packages/transformers/generation/utils.py`). Currently, only Llama 3-8B-Instruct is supported.
+> 3. If you need to test our method on a new dataset or other models, you need to first obtain the corresponding optimal hyperparameters using the `search_qa.sh` or `search_summary.sh` script. The modifications regarding the model(e.g. `model_name`) and dataset(e.g. `dataset_name`) in the bash file are the same as mentioned above.
 
 ## Results for Experiment
 
