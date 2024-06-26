@@ -20,7 +20,6 @@ python ../src/grid_search.py  \
     --evaluation_strategy no  \
     --weight_decay 0. \
     --logging_steps 1 \
-    --fsdp_transformer_layer_cls_to_wrap "'LlamaDecoderLayer'"  \
     --tf32 false  \
     --lr_scheduler_type constant  \
     --report_to none  \
