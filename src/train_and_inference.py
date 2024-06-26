@@ -19,7 +19,6 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import Dataset
 from transformers import Trainer
 from transformers.trainer import *
-from torchvision import models
 from typing import Dict, List, Optional, Sequence
 
 from utils import *
