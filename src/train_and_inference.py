@@ -609,7 +609,7 @@ if __name__ == "__main__":
             trainer.set_profile(training_args)
             model = trainer.model
         # Format the data
-        input_dict, metric_reference = data_format(training_args, final_data[idx])
+        input_dict, metric_reference = data_format(training_args, final_data[data_idx])
         doc_tokens = tokenizer.encode(input_dict["instruction"])
         if training_args.profile:  # if profile, only process the first data which is long enough to profile
             if len(doc_tokens) < 2500 and flag == 0:
