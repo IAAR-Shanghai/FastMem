@@ -124,23 +124,6 @@ class TrainingArguments(transformers.TrainingArguments):
     choose_dola: Optional[bool] = field(default=False, metadata={"help": "Choose generate strategy."})
     profile: Optional[bool] = field(default=False, metadata={"help": "Profile the training and inference process."})  
 
-# Adaptive KL controller
-class AdaptiveKLController:
-    """
-    Adaptive KL controller described in the paper:
-    https://arxiv.org/pdf/1909.08593.pdf
-    """
-    def __init__(self, init_kl_coef, target, horizon):
-        self.value = init_kl_coef
-        self.target = target
-        self.horizon = horizon
-
-    def update(self, current, n_steps):
-        target = self.target
-        proportional_error = np.clip(current / target - 1, -0.2, 0.2)
-        mult = 1 + proportional_error * n_steps / self.horizon
-        self.value *= mult
-
 
 # The following functions are used for the pretrain-like phase.
 # Pretrain-like phase: Tokenize reference data
