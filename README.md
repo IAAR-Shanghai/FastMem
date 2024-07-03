@@ -15,12 +15,11 @@ This is the official code of the paper **FastMem: Fast Memorization of Prompt Im
 
 If you find this repository or paper useful, you can cite
 ```
-@misc{zhu2024fastmem,
-      title={FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models}, 
-      author={Junyi Zhu and Shuochen Liu and Yu Yu and Bo Tang and Yibo Yan and Zhiyu Li and Feiyu Xiong and Tong Xu and Matthew B. Blaschko},
-      year={2024},
-      eprint={2406.16069},
-      archivePrefix={arXiv},
+@article{zhu2024fastmem,
+  title={FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models},
+  author={Zhu, Junyi and Liu, Shuochen and Yu, Yu and Tang, Bo and Yan, Yibo and Li, Zhiyu and Xiong, Feiyu and Xu, Tong and Blaschko, Matthew B},
+  journal={arXiv preprint arXiv:2406.16069},
+  year={2024}
 }
 ```
 ## Overview
