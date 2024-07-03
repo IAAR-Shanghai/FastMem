@@ -183,8 +183,8 @@ class NewTrainer(Trainer):
         # as the model is wrapped, don't use `accelerator.prepare`
         # this is for unhandled cases such as
         # FSDP-XLA, SageMaker MP/DP, DataParallel, IPEX
-        use_accelerator_prepare = True if (model is self.model and self.is_initial) else False
-        if not self.is_initial:
+        use_accelerator_prepare = True if (model is self.model and self.is_init) else False
+        if not self.is_init:
             self.optimizer = self.accelerator.prepare(self.optimizer)
 
         if delay_optimizer_creation:
