@@ -577,6 +577,9 @@ if __name__ == "__main__":
     flag = 0
     for idx, data_idx in tqdm.tqdm(enumerate((list(range(len(final_data)))[:data_args.num_data]))):
         # Set the optimizer and trainer
+        if training_args.num_train_epochs == 0 and data_idx == 0:
+            trainer = NewTrainer(model=model, tokenizer=tokenizer, args=training_args)
+            model = trainer.accelerator.prepare(model)
         if training_args.num_train_epochs > 0 or '70B' in model_args.model_name_or_path:
             optimizer = torch.optim.AdamW(param_to_optimize, lr=training_args.learning_rate) # flush the optimizer
             optimizer.zero_grad(set_to_none=True)
