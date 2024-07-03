@@ -30,7 +30,6 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s', datefmt="%Y-%m-%d %H:%M:%S",)
 logger = logging.getLogger(__name__)
 
-sys.setrecursionlimit(100000)
 IGNORE_INDEX = -100 # Index for ignoring tokens
 MAX_NUM_OF_MEM_EVENTS_PER_SNAPSHOT: int = 100000 # Maximum number of memory events per snapshot
 
@@ -589,6 +588,8 @@ if __name__ == "__main__":
             )
             if training_args.is_adaptive_kl:
                 trainer.set_adaptive_kl()
+            is_init = True if data_idx == 0 else False
+            trainer.is_init = is_init
             trainer.set_profile(training_args)
             model = trainer.model
         # Format the data
