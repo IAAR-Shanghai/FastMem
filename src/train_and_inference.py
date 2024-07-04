@@ -460,8 +460,6 @@ def train_and_inference(model, model_args, trainer, tokenizer, data_dict, last_l
         model.train()
         model.mode = 'train'
         trainer.train()
-    else:
-        model.cuda()
     model.mode = 'test'
     # Generate
     logger.info("Start generating...")
