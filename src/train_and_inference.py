@@ -439,7 +439,7 @@ def train_and_inference(model, model_args, trainer, tokenizer, data_dict, last_l
     """
     data_module = make_Pretrain_data_module(tokenizer=tokenizer, data_dict=data_dict, model_name=training_args.model_name)
     # When model size is 70B, we need to use trainer to set multi-GPU execution
-    if training_args.num_train_epochs > 0 or '70B' in model_args.model_name_or_path:
+    if training_args.num_train_epochs > 0:
         trainer.train_dataset = data_module['train_dataset']
         # Flush the trainer
         trainer.set_ref()
