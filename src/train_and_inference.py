@@ -337,7 +337,7 @@ def generate(
     prompt = "inference_prompt_{}_{}".format(model_name, dataset_name)
     if training_args.choose_cd:
         past_key_values_without_context = None
-        last_layer_params_cad = {}
+        last_layer_params_cd = {}
         train_list = []
         for i in range(layer_num - model_args.train_layer, layer_num):
             train_list.append("model.layers.{}.mlp.gate_proj.weight".format(i))
@@ -346,7 +346,7 @@ def generate(
         with torch.no_grad():
             for name, item in model.named_parameters():
                 if name in train_list:
-                    last_layer_params_cad[name] = item.data.detach().clone()
+                    last_layer_params_cd[name] = item.data.detach().clone()
     # Tokenize the input
     input_ids_with_context = torch.LongTensor(tokenizer.encode(PROMPT_DICT[prompt].format_map(inputs_with_contexts), add_special_tokens=True, max_length=tokenizer.model_max_length - max_length, truncation=True)).unsqueeze(0).to(model.device)
     history_decode_ids = None
@@ -397,7 +397,7 @@ def generate(
                     with torch.no_grad():
                         for name, item in model.named_parameters():
                             if name in train_list:
-                                item.copy_(last_layer_params_cad[name].clone())
+                                item.copy_(last_layer_params_cd[name].clone())
                 # Next token prediction
                 if temperature > 0:
                     probs = torch.softmax(next_token_logits_with_contexts / temperature, dim=-1)
