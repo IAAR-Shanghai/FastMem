@@ -589,8 +589,7 @@ if __name__ == "__main__":
             )
             if training_args.is_adaptive_kl:
                 trainer.set_adaptive_kl()
-            is_init = True if data_idx == 0 else False
-            trainer.is_init = is_init
+            trainer.is_init = True if data_idx == 0 else False
             trainer.set_profile(training_args)
             model = trainer.model
         # Format the data
