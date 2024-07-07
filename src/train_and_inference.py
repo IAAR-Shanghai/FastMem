@@ -356,7 +356,7 @@ def generate(
         if training_args.choose_dola:
             outputs = model.generate(input_ids_with_context, training_args, max_new_tokens=max_length, num_return_sequences=1,
                                     output_scores=True, return_dict_in_generate=True, dola_decoding=True,
-                                    top_p=top_p, top_k=0, temperature=temperature, stopping_criteria=None, relative_top=0.1, 
+                                    top_p=top_p, top_k=0, temperature=None, stopping_criteria=None, relative_top=0.1, 
                                     mature_layer=mature_layer, premature_layer=None, candidate_premature_layers=candidate_premature_layers, **kwargs,)
             sequence = outputs.sequences
             gen_squence = sequence[:, input_ids_with_context.shape[-1]:][0, :]
