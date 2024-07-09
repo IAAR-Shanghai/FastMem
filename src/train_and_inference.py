@@ -433,7 +433,7 @@ def train_and_inference(model, model_args, trainer, tokenizer, data_dict, last_l
             last_layer_params: Saved training parameters.
             training_args: training arguments.
             generate_kwargs: DoLa generate arguments.
-            layer_num: the number of training layers.
+            layer_num: The number of transformer blocks in the model.
         Returns:
             response: The results of decoding the model outputs.
     """
