@@ -65,17 +65,7 @@ def data_format(
             A dictionary containing the input data and metric reference.
     """
     if train_args.task_type == 'qa':
-        if "squad" == train_args.dataset_name:
-            input_dict = {
-                "instruction": data["context"],
-                "input" : "",
-                "question": data["question"]
-            }
-            metric_reference = {
-                "answers": data["answers"],
-                "id": data["id"]
-            }
-        elif "nqswap" == train_args.dataset_name:
+        if "nqswap" == train_args.dataset_name.lower():
             input_dict = {
                 "instruction": data["sub_context"],
                 "input" : "",
@@ -84,7 +74,7 @@ def data_format(
             metric_reference = {
                 "answers": [data["sub_answer"]]
             }
-        elif "nq" == train_args.dataset_name:
+        elif "nq" == train_args.dataset_name.lower():
             input_dict = {
                 "instruction": data["context"],
                 "input" : "",
@@ -93,7 +83,7 @@ def data_format(
             metric_reference = {
                 "answers": [data["answer"]]
             }
-        elif "nq_icl" == train_args.dataset_name:
+        elif "nq_icl" == train_args.dataset_name.lower():
             icl = '''Please extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\n'''
             instruction = icl + '''Context: {context}'''.format_map(data)
             input_dict = {
@@ -104,7 +94,7 @@ def data_format(
             metric_reference = {
                 "answers": [data["answer"]]
             }
-        elif "nqswap_icl" == train_args.dataset_name:
+        elif "nqswap_icl" == train_args.dataset_name.lower():
             icl = '''Please extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\n'''
             instruction = icl + '''Context: {sub_context}'''.format_map(data)
             input_dict = {
@@ -115,7 +105,7 @@ def data_format(
             metric_reference = {
                 "answers": [data["sub_answer"]]
             }
-        elif "memotrap" == train_args.dataset_name:
+        elif "memotrap" in train_args.dataset_name.lower():
             split_prompt = data["prompt"].split(":")
             if len(split_prompt) == 2:
                 instruction, sentence = split_prompt
