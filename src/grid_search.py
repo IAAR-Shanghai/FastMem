@@ -29,7 +29,6 @@ from Trainer import NewTrainer
 from train_and_inference import train_and_inference
 from train_and_inference import DataCollatorForPretrainDataset
 
-sys.setrecursionlimit(1000000)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -143,6 +142,8 @@ def grid_search(final_data, training_args, data_args, model_args, model, last_la
             data_collator=data_collator,
             optimizers=(optimizer, None),
         )
+        is_initial = True if idx == 0 else False
+        trainer.is_initial = is_initial
         trainer.set_profile(training_args)
         logger.info(f"kl: {training_args.kl_coeff}, lr: {training_args.learning_rate}, epoch: {training_args.num_train_epochs}")
 
