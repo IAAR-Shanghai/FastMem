@@ -91,5 +91,5 @@ Our code have been developed based on [Stanford Alpaca](https://github.com/tatsu
 ## Contact Us
 
 * Junyi Zhu: junyizhu.ai@gmail.com
-* Shuochen Liu: liusc@iaar.ac.cn
+* Shuochen Liu: shuochenliu@mail.ustc.edu.cn
 * Bo Tang: tangb@iaar.ac.cn
