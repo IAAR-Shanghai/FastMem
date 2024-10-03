@@ -11,7 +11,7 @@
 </p>
 
 This is the official code of the paper **FastMem: Fast Memorization of Prompt Improves Context Awareness of Large Language Models**
- by *Junyi Zhu, *Shuochen Liu, Yu Yu, Bo Tang, Yibo Yan, Zhiyu Li, Feiyu Xiong, Tong Xu, Matthew B. Blaschko
+ by *Junyi Zhu, *Shuochen Liu, Yu Yu, Bo Tang, Yibo Yan, Zhiyu Li, Feiyu Xiong, Tong Xu, Matthew B. Blaschko (Accepted as Findings of EMNLP 2024)
 
 If you find this repository or paper useful, you can cite
 ```
