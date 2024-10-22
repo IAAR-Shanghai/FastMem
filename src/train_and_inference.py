@@ -40,23 +40,23 @@ PROMPT_DICT = {
     ),
     # Pretrain-like phase
     "pretrain_prompt_pretrain_assistant_llama3": (
-        '''<|begin_of_text|><|start_header_id|>assistant<|end_header_id|>\n\n{instruction}<|eot_id|>'''
+        '''<|start_header_id|>assistant<|end_header_id|>\n\n{instruction}<|eot_id|>'''
     ),
     "pretrain_prompt_pretrain_assistant_qwen": (
         '''<|im_start|>assistant\n{instruction}<|im_end|>'''
     ),
     # Inference phase: Q&A
     "inference_prompt_llama3_nq": (
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ),
     "inference_prompt_llama3_nqswap": (
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ),
     "inference_prompt_llama3_hotpot": ( 
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ),
     "inference_prompt_llama3_memotrap": ( 
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nPlease choose the candidate that best fits the instructions and provide the answer in the following format: "The answer is: ...".\nInstruction: {instruction}\nSentence: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nPlease choose the candidate that best fits the instructions and provide the answer in the following format: "The answer is: ...".\nInstruction: {instruction}\nSentence: {question}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ),
     "inference_prompt_qwen_nq": (
         '''<|im_start|>user\nPlease extract from the context the span that best answers the question and provide the answer in the following format: "The answer is: ...".\nContext: {instruction}\nQuestion: {question}<|im_end|>\n<|im_start|>assistant\n'''
@@ -78,13 +78,13 @@ PROMPT_DICT = {
     ),
     # Inference phase: Summarization
     "inference_prompt_llama3_xsum": (
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nArticle: {instruction}\nSummarize the above article in 1 sentence.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nArticle: {instruction}\nSummarize the above article in 1 sentence.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ),
     "inference_prompt_llama3_cnndm": (
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nArticle: {instruction}\nSummarize the above article in 3 sentences.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nArticle: {instruction}\nSummarize the above article in 3 sentences.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ),
     "inference_prompt_llama3_wikihow": (
-        '''<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nArticle: {instruction}\nSummarize the above article in few steps using concise verb-object phrases directly.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
+        '''<|start_header_id|>user<|end_header_id|>\n\nArticle: {instruction}\nSummarize the above article in few steps using concise verb-object phrases directly.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
     ), 
 }
 
@@ -189,7 +189,7 @@ def preprocess(
     """
     if name == 'llama3':
         sources = [PROMPT_DICT['pretrain_prompt_pretrain_assistant_llama3'].format_map({'instruction': sources[0]})]
-        prompt_length = len(tokenizer("<|begin_of_text|><|start_header_id|>assistant<|end_header_id|>\n\n")['input_ids'])
+        prompt_length = len(tokenizer("<|start_header_id|>assistant<|end_header_id|>\n\n")['input_ids'])
     elif name == 'qwen':
         sources = [PROMPT_DICT['pretrain_prompt_pretrain_assistant_qwen'].format_map({'instruction': sources[0]})]
         prompt_length = len(tokenizer("<|im_start|>assistant\n")['input_ids'])
